@@ -1,14 +1,14 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, ValidationPipe } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, ValidationPipe, UseGuards } from '@nestjs/common';
 import { UserService } from './user.service';
-import { Prisma } from '@prisma/client';
-import { CreateUserDtoCenah } from './dto/user.dto';
+import { JwtGuard } from 'src/auth/guards/jwt.guard';
 
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) { }
 
-  // @Post()
-  // async create(@Body(ValidationPipe) createUserDto: CreateUserDtoCenah) {
-  //   return await this.userService.create(createUserDto);
-  // }
+  @UseGuards(JwtGuard)
+  @Get(":id")
+  async getUserprofile(@Param("id") id: string) {
+    return await this.userService.findByById(id)
+  }
 }
