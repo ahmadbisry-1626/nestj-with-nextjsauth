@@ -1,5 +1,6 @@
-import Image from "next/image";
-import { TypewriterEffect } from "./components/ui/TypeWriter";
+import { Input } from "@nextui-org/input";
+import { BiSearchAlt } from "react-icons/bi";
+
 
 export default function Home() {
   const words = [
@@ -23,23 +24,18 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-[#09090b]">
-      <div className="wrapper flex flex-col gap-4 items-center justify-center">
-        <span className="text-xl tracking-wide text-gray-50">Kamu mau juga?</span>
-        <TypewriterEffect words={words} className="" cursorClassName="" />
-
-        <div className="mt-4 flex gap-4">
-          <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-[120px]">
-            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-              Join us
+      <div className="flex flex-col gap-4 items-center justify-center w-full">
+        <div className="h-[700px] w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center wrapper gap-6">
+            <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+            <p className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-4">
+              Ahmad Suganda
+            </p>
+            <span className="text-gray-50 text-xl text-center max-w-5xl">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis dolore explicabo molestiae accusamus. Atque iste consectetur autem mollitia quae vero minima molestias maiores, esse dignissimos fugit reprehenderit eligendi molestiae nobis!
             </span>
-          </button>
-          <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-[120px]">
-            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-              Scroll down
-            </span>
-          </button>
+            <Input variant="flat" label="Search..." className="max-w-5xl" endContent={<BiSearchAlt className="w-8 h-8 text-gray-500" />}/>
+          </div>
         </div>
       </div>
     </main>
