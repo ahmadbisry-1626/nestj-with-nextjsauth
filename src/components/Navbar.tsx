@@ -1,9 +1,10 @@
 import React from 'react'
 import { ButtonKeren } from './ui/ButtonKeren'
+import { Button } from '@nextui-org/button'
 
 const Navbar = () => {
     return (
-        <nav className='w-full fixed bg-[#000000] z-20'>
+        <nav className='w-full fixed bg-transparent z-20'>
             <div className='wrapper flex items-center justify-between'>
                 <div className='flex items-end gap-1 text-gray-50'>
                     <h1 className='text-2xl font-semibold tracking-wide'>NestJS</h1>
@@ -11,9 +12,9 @@ const Navbar = () => {
                 </div>
 
                 <div className='flex items-center gap-2'>
-                    <ButtonKeren>
+                    <Button variant='light' className='text-gray-50 rounded-full h-[45px] w-[90px]'>
                         Sign in
-                    </ButtonKeren>
+                    </Button>
                     <ButtonKeren>
                         Sign up
                     </ButtonKeren>
