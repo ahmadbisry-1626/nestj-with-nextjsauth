@@ -1,8 +1,12 @@
 import React from 'react'
 import SignInButton from './SignInButton'
 import Link from 'next/link'
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 
-const Navbar = () => {
+const Navbar = async () => {
+    const session = await getServerSession(authOptions)
+
     return (
         <nav className='w-full fixed bg-transparent z-20'>
             <div className='wrapper flex items-center justify-between'>
