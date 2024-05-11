@@ -3,8 +3,6 @@
 import { Backend_URL } from '@/lib/constans';
 import { Button } from '@nextui-org/button';
 import { Input } from '@nextui-org/input'
-import Link from 'next/link';
-import { redirect } from 'next/navigation';
 import React, { useRef, useState } from 'react'
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { IoLockOpen } from 'react-icons/io5';
